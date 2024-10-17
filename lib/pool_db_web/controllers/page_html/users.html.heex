@@ -1,0 +1,8 @@
+<h1>Users Page from Hard Coded Data</h1>
+<!-- Using template engine of Elixir, called Eex -->
+ <ul>
+    <!-- Boucle for syntax, here in users data -->
+ <%= for user <- @users do %>
+    <li>Name : <%= user.name %> - Email : <%= user.email %></li>
+    <% end %>
+</ul>
