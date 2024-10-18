@@ -5,7 +5,7 @@ defmodule PoolDbWeb.PostJSON do
   Renders a list of posts.
   """
   def index(%{posts: posts}) do
-    # Changing data: for userData: for UI (in Postman, for example)
+    # Changing data: for dataUser: for UI (in Postman, for example)
     %{allPosts: for(post <- posts, do: data(post))}
   end
 

@@ -19,6 +19,9 @@ defmodule PoolDb.Accounts do
   """
   def list_users do
     Repo.all(User)
+    # Important condition below : unless preloaded, the list won't be shown
+    # Make all posts available to be listed with the proper user
+    |> Repo.preload(:posts)
   end
 
   @doc """

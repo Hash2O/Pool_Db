@@ -1,7 +1,7 @@
 defmodule PoolDbWeb.UserJSON do
   alias PoolDb.Accounts.User
   alias PoolDbWeb.PostJSON
-  # alias PoolDb.Posts.Post
+  alias PoolDb.Posts.Post
 
   @doc """
   Renders a list of users.
@@ -27,11 +27,11 @@ defmodule PoolDbWeb.UserJSON do
   end
 
   # to show posts owned by an user
-  # def post_data(%Post{} = post) do
-  #   %{
-  #     id: post.id,
-  #     title: post.title,
-  #     body: post.body
-  #   }
-  # end
+  def post_data(%Post{} = post) do
+    %{
+      id: post.id,
+      title: post.title,
+      body: post.body
+    }
+  end
 end
