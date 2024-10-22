@@ -1,0 +1,17 @@
+Explications :
+Étape de build (stage 1) :
+
+Nous utilisons l’image officielle elixir:1.15-alpine pour installer les dépendances nécessaires, y compris Node.js et PostgreSQL client.
+Les fichiers mix.exs et mix.lock sont copiés pour récupérer les dépendances Elixir avec mix deps.get.
+
+Nous installons également les dépendances JavaScript (si le projet Phoenix a un frontend) avec npm install.
+
+Enfin, nous compilons l’application avec mix compile et préparons les assets avec mix phx.digest.
+
+Étape de production (stage 2) :
+
+Une nouvelle image elixir:1.15-alpine est utilisée pour exécuter l’application compilée.
+
+Les fichiers compilés sont copiés depuis l’étape de build.
+
+Le conteneur expose le port 4000, le port par défaut de Phoenix, pour que l’application puisse être accessible.
